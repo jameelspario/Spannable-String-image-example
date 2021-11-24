@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+   <!-- <com.deificindia.myapplication.TAGView
+        android:id="@+id/tag_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tag_stroke_width="2dp"
+    app:tag_radius="4dp"
+    app:tag_as_circle="false"
+    app:tag_icon="@drawable/ic_male_gender"
+    app:tag_text="TAG"
+    app:tag_color="#9d55b8"
+    app:tag_text_color="#ffffff"
+    app:tag_text_size="13sp"
+    app:tag_divider="2dp"
+    app:tag_image_width="16dp"
+    app:tag_padding="4dp"
+    app:tag_padding_top="4dp"
+    app:tag_padding_bottom="4dp"
+    app:tag_padding_left="4dp"
+    app:tag_padding_right="4dp"/>-->
+
+</RelativeLayout>

@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/indifun/MyApplication/app/src/main/res/drawable/ic_female_sign.xml" value="0.21458333333333332" />
+        <entry key="..\:/indifun/MyApplication/app/src/main/res/drawable/ic_male_gender.xml" value="0.21458333333333332" />
         <entry key="..\:/indifun/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1814814814814815" />
+        <entry key="..\:/indifun/MyApplication/app/src/main/res/layout/layout_tag_view.xml" value="0.1984375" />
+        <entry key="..\:/indifun/MyApplication/app/src/main/res/layout/tag_view.xml" value="0.1984375" />
       </map>
     </option>
   </component>
