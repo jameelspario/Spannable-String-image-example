@@ -3,14 +3,20 @@ package com.deificindia.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.text.style.StyleSpan;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    final StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD);
+    final StyleSpan iss = new StyleSpan(android.graphics.Typeface.ITALIC);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +37,28 @@ public class MainActivity extends AppCompatActivity {
         ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_CENTER);
         ssb.setSpan(imageSpan, ssb.length()-1, ssb.length() , 0);
 
-        int index = ssb.length();
+        ssb.append(" ");
+        ImageSpan imageSpan1 = new ImageSpan(drawable, ImageSpan.ALIGN_CENTER);
+        ssb.setSpan(imageSpan1, ssb.length()-1, ssb.length() , Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        int start= ssb.length();
+        String str = "name : ";
+        ssb.append(str);
+        ssb.setSpan(bss, start, start + str.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new ForegroundColorSpan(Color.RED),
+                start, // start
+                start + str.length(), // end
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+
         String tx = "name hello hello hello helloe qwerty poi hloo sddf dfsdf sdfsdf  fsd s  ";
         ssb.append(tx);
 
         //ssb.setSpan(txt, index, index + tx.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        ssb.append(" ");
-        index = ssb.length();
 
-        ImageSpan imageSpan1 = new ImageSpan(drawable, ImageSpan.ALIGN_CENTER);
-        ssb.setSpan(imageSpan1, index-1, index , Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        //ssb.setSpan(bss, 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+
         txt.setText(ssb);
 
 
