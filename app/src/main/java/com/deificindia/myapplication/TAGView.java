@@ -131,7 +131,7 @@ public class TAGView extends ViewGroup {
     public void setAsCircle(){
         asCircle = true;
         invalidate();
-    }
+    } 
 
     public void setRadius(int radius){
         this.radius = dip2px(radius);

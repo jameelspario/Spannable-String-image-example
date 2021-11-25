@@ -53,7 +53,7 @@ public class DrawableRectBuilder {
     }
 
     public Drawable build(){
-        GradientDrawable gd = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, color_list);
+        GradientDrawable gd;
         if(color_list!=null) {
             gd = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, color_list);
         }else {

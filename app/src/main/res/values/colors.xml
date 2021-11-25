@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white1">#11000000</color>
     <color name="male_color">#2196F3</color>
-    <color name="female_color">#E91E63</color>
+    <color name="female_color">#FC226C</color>
+    <color name="female_color0">#00FFFFFF</color>
 </resources>
