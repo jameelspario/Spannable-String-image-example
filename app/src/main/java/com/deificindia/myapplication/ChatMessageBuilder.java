@@ -45,6 +45,27 @@ public class ChatMessageBuilder {
         return this;
     }
 
+    public ChatMessageBuilder addSpace(String space){
+        ssb.append(space);
+        return this;
+    }
+
+    public int getLength(){
+       return ssb.length();
+    }
+
+    public ChatMessageBuilder drawDrawableAt(Drawable drawable, int at){
+
+        int width = dip2px(context.get(), 12);
+        int height = dip2px(context.get(), 12);
+        drawable.setBounds(0, 0, width, height);
+
+        ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_CENTER);
+        ssb.setSpan(imageSpan, at-1, at , Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        return this;
+    }
+
     public static class TagObject{
         public int bgcolor;
         public int textColor;

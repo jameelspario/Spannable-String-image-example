@@ -33,6 +33,8 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         ChatMessageBuilder ssb = ChatMessageBuilder.get(this);
         ssb.drawDrawable(
-                        ContextCompat.getDrawable(this, R.drawable.ic_verified_live),
                         ContextCompat.getDrawable(this, R.drawable.ic_verified_live)
                 );
 
@@ -61,23 +62,47 @@ public class MainActivity extends AppCompatActivity {
                         new ChatMessageBuilder.TagObject(Color.parseColor("#E91E63"), Color.parseColor("#FFFFFF"), "20", ContextCompat.getDrawable(this, R.drawable.ic_female_sign), Color.parseColor("#FFFFFF"))
                 );
 
-
-
-
         String l = "https://i.ibb.co/XzMMN6R/ic-income.png";
         new Thread(()-> {
 
             Drawable draw1 = fromUrl(l);
 
             new Handler(Looper.getMainLooper()).post(()->{
-                ssb.drawDrawable(
-                        draw1
-                );
-
+                ssb.drawDrawable(draw1);
                 txt.setText(ssb.build());
             });
 
         }).start();
+
+        List<String> tags = Arrays.asList(
+            l,l,l
+        );
+        if(tags.size()>0){
+            int[] space = new int[tags.size()];
+            Drawable[] drawables = new Drawable[tags.size()];
+
+            for (int i=0; i<tags.size(); i++){
+                ssb.addSpace("  ");
+                space[i] = ssb.getLength();
+            }
+
+            new Thread(() -> {
+                /* medal, aristo*/
+                for (int i = 0; i < tags.size(); i++) {
+                    drawables[i] = fromUrl(tags.get(i));
+                }
+
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    for (int i=0; i<drawables.length; i++){
+                        ssb.drawDrawableAt(drawables[i], space[i]);
+                    }
+
+                    txt.setText(ssb.build());
+                });
+
+            }).start();
+
+        }
 
 
         ssb.drawText(
